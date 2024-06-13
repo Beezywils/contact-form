@@ -10,6 +10,13 @@
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
 }
+#toggle {
+    display: none;
+
+}
+label {
+    display: none;
+}
 
 body {
     height: 100vh;
@@ -25,14 +32,12 @@ nav {
     align-items: center;
     justify-content: space-between;
 }
-nav>h1 {
-    font-size: 2rem;
-}
+
+
 .navItems {
     display: flex;
     align-items: center;
     gap: 35px;
-    
 }
 .navItems>a {
     font-weight: 500;
@@ -93,6 +98,7 @@ input, textarea {
     border-radius: 5px;
     border: none;
     outline: none;
+    resize: none;
 }
 input::placeholder, textarea::placeholder {
     opacity: .5;
@@ -138,7 +144,7 @@ button {
     font-weight: 500;
     margin-top: 13px;
 }
-.formWrapper>span {
+.cons>span {
     border-top-left-radius: 10px;
     gap: 10px;
     color: #fff;
@@ -148,10 +154,94 @@ button {
     display: flex;
     padding: .5rem 1rem;
     float: right;
-    margin-top: 1.7rem;
+    margin-top: 1.2rem;
     
 }
-.formWrapper>span>i {
+.cons>span>i {
     font-size: 13px;
     
+}
+
+
+
+@media (max-width: 390px) {
+
+
+label {
+    display: block;
+    font-size: 2rem;
+   margin-right: 1rem;
+   
+  
+}
+nav {
+    padding-block: 1rem;
+}
+.navRight {
+    padding: 1.8rem;
+    display: none;
+    position: absolute;
+    margin-top: 70px;
+  
+    width: 60%;
+    top: 4rem;
+    
+    z-index: 1;
+    background-color: white;
+    opacity: 0.97;
+    border-top: 4px solid   #6d6cd0;
+    border-bottom: 4px solid  #6d6cd0;
+    position: absolute;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+
+}
+.navItems > a {
+    width: 100%;
+    color: black;
+    font-size: 18px;
+    padding: 0.6rem;
+    text-align: center;
+    border-bottom: 4px solid white;
+}
+.navItems>a:hover {
+    color: red;
+}
+.navItems {
+    display: flex;
+    flex-direction: column;
+    
+    
+
+
+    
+}
+#toggle:checked + .navRight {
+    display: block;
+    text-transform: none;
+}
+
+.formWrapper {
+    width: 85%;
+    height: 75vh;
+}
+.innerformWrapper {
+    margin-right: 30px;
+}
+
+form {
+    text-align: center;
+}
+
+.formImg {
+    display: none;
+}
+
+.cons {
+    display: none;
+}
+
+
+
+
 }
